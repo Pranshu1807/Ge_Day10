@@ -30,7 +30,7 @@ public class LinkedList<K, V> {
         System.out.println("null");
     }
 
-    public int getIndex(String str) {
+    public int getIndex(K str) {
         MyMapNode<K, V> temp = this.head;
         int i = 0;
         while (temp != null) {
@@ -43,7 +43,7 @@ public class LinkedList<K, V> {
         return -1;
     }
 
-    public int frequency(String str) {
+    public int frequency(K str) {
         MyMapNode<K, V> temp = this.head;
         while (temp != null) {
             if (temp.data.key.equals(str)) {
@@ -53,4 +53,48 @@ public class LinkedList<K, V> {
         }
         return -1;
     }
+
+    public String[] remove(K str) {
+
+        if (this.head.data.key.equals(str)) {
+            head = head.next;
+        } else {
+            MyMapNode<K, V> temp = this.head;
+            MyMapNode<K, V> toDel = null;
+            while (temp.next != null) {
+                if (temp.next.data.key.equals(str)) {
+                    toDel = temp;
+                    break;
+                }
+                temp = temp.next;
+            }
+            if (toDel == null)
+                System.out.println("Word not present");
+            else {
+                toDel.next = toDel.next.next;
+                System.out.println("Word Removed succesfully");
+            }
+        }
+        String[] arr = new String[this.length()];
+        MyMapNode<K, V> temp = this.head;
+        int i = 0;
+        while (temp != null) {
+            arr[i] = (String) temp.data.key;
+            temp = temp.next;
+            i++;
+        }
+        return arr;
+    }
+
+    public int length() {
+        MyMapNode<K, V> temp = head;
+
+        int len = 0;
+        while (temp != null) {
+            temp = temp.next;
+            len++;
+        }
+        return len;
+    }
+
 }

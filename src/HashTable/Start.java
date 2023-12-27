@@ -38,5 +38,11 @@ public class Start {
 
         System.out.println("Frequency of avoidable is " + L1.frequency("avoidable"));
         System.out.println("Frequency of paranoid is " + L1.frequency("paranoid"));
+
+        words = L1.remove("avoidable");
+
+        for (String word : words) {
+            System.out.print(word + " ");
+        }
     }
 }
