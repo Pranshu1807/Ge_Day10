@@ -20,5 +20,11 @@ public class Start {
         binarySearchTree.insert(67);
         binarySearchTree.inorderTraversal();
         System.out.println("The size of the BST is " + binarySearchTree.size());
+        int find = binarySearchTree.search(3);
+        if (find == 1) {
+            System.out.println("The value is present in the BST");
+        } else {
+            System.out.println("The value is not present in the BST");
+        }
     }
 }
