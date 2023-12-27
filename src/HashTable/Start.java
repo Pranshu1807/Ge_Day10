@@ -36,5 +36,7 @@ public class Start {
             System.out.println("word not found");
         }
 
+        System.out.println("Frequency of avoidable is " + L1.frequency("avoidable"));
+        System.out.println("Frequency of paranoid is " + L1.frequency("paranoid"));
     }
 }

@@ -42,4 +42,15 @@ public class LinkedList<K, V> {
         }
         return -1;
     }
+
+    public int frequency(String str) {
+        MyMapNode<K, V> temp = this.head;
+        while (temp != null) {
+            if (temp.data.key.equals(str)) {
+                return (int) temp.data.value;
+            }
+            temp = temp.next;
+        }
+        return -1;
+    }
 }
